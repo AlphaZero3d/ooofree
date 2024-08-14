@@ -23,8 +23,14 @@ server.use(passport.initialize());
 server.use(passport.session());
 
 // Set up view engine
-server.engine('hbs', require('express-handlebars')({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'app', 'views', 'layouts') }));
+const { engine } = require('express-handlebars');
+server.engine('hbs', engine({
+    extname: 'hbs', 
+    defaultLayout: 'main', 
+    layoutsDir: path.join(__dirname, 'app', 'views', 'layouts')
+}));
 server.set('view engine', 'hbs');
+server.set('views', path.join(__dirname, 'app', 'views'));  // Path to your views
 
 // Use the main app routes
 server.use('/', app);
