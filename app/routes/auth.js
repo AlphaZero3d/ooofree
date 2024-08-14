@@ -57,17 +57,28 @@ router.get('/register', (req, res) => {
 });
 
 // Route to handle registration form submission
+// Route to handle registration form submission
 router.post('/register', async (req, res) => {
     try {
         const { username, password } = req.body;
+
+        // Log the input data
+        console.log('Registering user with username:', username);
+
+        // Hash the password before storing it
         const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Create a new user in the database
         await User.create({ username, password: hashedPassword });
+
+        // Redirect to login page after successful registration
         res.redirect('/login');
     } catch (err) {
+        // Log the error for debugging
+        console.error('Error during user registration:', err.message);
         res.status(500).send('Error registering user');
     }
 });
-
 // Route to handle logout
 router.get('/logout', (req, res) => {
     req.logout(err => {
