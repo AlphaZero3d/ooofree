@@ -1,16 +1,5 @@
-<header>
-    <nav>
-        <a href="/">Home</a>
-        {{#if user}}
-            <a href="/add_workout">Add Workout</a>
-            <a href="/view_workouts">View Workouts</a>
-            <a href="/logout">Logout</a>
-        {{else}}
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
-        {{/if}}
-    </nav>
-</header>
+{{!< main}}  <!-- This tells Handlebars to use the main layout -->
+
 <h1>Login</h1>
 <form action="/login" method="POST">
     <div>
@@ -24,6 +13,3 @@
     <button type="submit">Login</button>
 </form>
 <p>Don't have an account? <a href="/register">Register here</a>.</p>
-<footer>
-    <p>&copy; 2024 FreeWeightTracker.com</p>
-</footer>
