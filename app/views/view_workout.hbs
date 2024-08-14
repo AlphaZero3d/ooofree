@@ -1,0 +1,26 @@
+<header>
+    <nav>
+        <a href="/">Home</a>
+        {{#if user}}
+            <a href="/add_workout">Add Workout</a>
+            <a href="/view_workouts">View Workouts</a>
+            <a href="/logout">Logout</a>
+        {{else}}
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        {{/if}}
+    </nav>
+</header>
+<h1>View Workouts</h1>
+{{#each workouts}}
+    <h2>{{date}}</h2>
+    <ul>
+        <li>Exercise: {{exercise}}</li>
+        <li>Sets: {{sets}}</li>
+        <li>Reps: {{reps}}</li>
+        <li>Weight: {{weight}} lbs</li>
+    </ul>
+{{/each}}
+<footer>
+    <p>&copy; 2024 FreeWeightTracker.com</p>
+</footer>

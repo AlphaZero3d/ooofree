@@ -1,0 +1,23 @@
+<h1>Workout Log</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each workouts}}
+            <tr>
+                <td>{{this.date}}</td>
+                <td>{{this.exercise}}</td>
+                <td>{{this.sets}}</td>
+                <td>{{this.reps}}</td>
+                <td>{{this.weight}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

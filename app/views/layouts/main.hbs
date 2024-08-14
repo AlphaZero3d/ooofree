@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        {{#if user}}
+            <nav>
+                <a href="/">Home</a>
+                <a href="/add_workout">Add Workout</a>
+                <a href="/view_workouts">View Workouts</a>
+                <a href="/logout">Logout</a>
+            </nav>
+        {{else}}
+            <nav>
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </nav>
+        {{/if}}
+        {{{body}}}
+    </div>
+</body>
+</html>
