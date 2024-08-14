@@ -1,17 +1,5 @@
-{{!-- Extending the base layout --}}
-<header>
-    <nav>
-        <a href="/">Home</a>
-        {{#if user}}
-            <a href="/add_workout">Add Workout</a>
-            <a href="/view_workouts">View Workouts</a>
-            <a href="/logout">Logout</a>
-        {{else}}
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
-        {{/if}}
-    </nav>
-</header>
+{{!< main}}  <!-- This tells Handlebars to use the main layout -->
+
 <h1>Add Workout</h1>
 <form action="/add_workout" method="POST">
     <div>
@@ -36,7 +24,3 @@
     </div>
     <button type="submit">Add Workout</button>
 </form>
-<footer>
-    <p>&copy; 2024 FreeWeightTracker.com</p>
-</footer>
-
