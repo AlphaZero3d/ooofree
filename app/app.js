@@ -1,9 +1,12 @@
 const express = require('express');
-const app = express();
-const workoutRoutes = require('./routes/workout');
+const router = express.Router();
 const authRoutes = require('./routes/auth');
+const workoutRoutes = require('./routes/workout');
 
-app.use('/', authRoutes);
-app.use('/', workoutRoutes);
+// Use authentication routes
+router.use('/', authRoutes);
 
-module.exports = app;
+// Use workout-related routes
+router.use('/', workoutRoutes);
+
+module.exports = router;
